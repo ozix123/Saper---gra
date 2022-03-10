@@ -18,14 +18,14 @@ namespace Saper___gra
         {
             InitializeComponent();
         }
-
+        
         private void button_start_Click(object sender, EventArgs e)
         {
             Random rdn = new Random();
             int x = rdn.Next(1, 12);
             int y = rdn.Next(13, 18);
             int z = rdn.Next(19, 25);
-
+            
 
             for (int i = 1; i <= 25; i++)
             {

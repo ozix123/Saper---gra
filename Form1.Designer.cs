@@ -34,6 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -47,9 +48,9 @@
             // 
             this.button_start.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.button_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button_start.Location = new System.Drawing.Point(444, 26);
+            this.button_start.Location = new System.Drawing.Point(426, 26);
             this.button_start.Name = "button_start";
-            this.button_start.Size = new System.Drawing.Size(114, 49);
+            this.button_start.Size = new System.Drawing.Size(114, 43);
             this.button_start.TabIndex = 1;
             this.button_start.Text = "Zacznij grę";
             this.button_start.UseVisualStyleBackColor = true;
@@ -97,11 +98,24 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "0";
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Items.AddRange(new object[] {
+            "Łatwy",
+            "Średni",
+            "Trudny"});
+            this.listBox1.Location = new System.Drawing.Point(363, 26);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(45, 43);
+            this.listBox1.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(593, 280);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -123,6 +137,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
