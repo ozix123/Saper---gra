@@ -32,8 +32,7 @@ namespace Saper___gra
                 Button btnTemp = new Button();
                 btnTemp.Cursor = System.Windows.Forms.Cursors.Arrow;
                 btnTemp.Name = "btnTemp" + i.ToString();
-                btnTemp.Size = new System.Drawing.Size(40, 40);
-                btnTemp.Text = i.ToString();
+                btnTemp.Size = new System.Drawing.Size(40, 40);               
                 btnTemp.UseVisualStyleBackColor = true;
                 flowLayoutPanel1.Controls.Add(btnTemp);
                 btnTemp.Click += BtnTemp_Click;
