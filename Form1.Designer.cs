@@ -37,6 +37,7 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
+            this.GrazTrudnoscia = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -128,16 +129,28 @@
             "Łatwy",
             "Średni",
             "Trudny"});
-            this.listBox2.Location = new System.Drawing.Point(374, 26);
+            this.listBox2.Location = new System.Drawing.Point(374, 214);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(46, 43);
             this.listBox2.TabIndex = 6;
+            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
+            // 
+            // GrazTrudnoscia
+            // 
+            this.GrazTrudnoscia.Location = new System.Drawing.Point(439, 214);
+            this.GrazTrudnoscia.Name = "GrazTrudnoscia";
+            this.GrazTrudnoscia.Size = new System.Drawing.Size(101, 43);
+            this.GrazTrudnoscia.TabIndex = 7;
+            this.GrazTrudnoscia.Text = "Graj placeholder";
+            this.GrazTrudnoscia.UseVisualStyleBackColor = true;
+            this.GrazTrudnoscia.Click += new System.EventHandler(this.GrazTrudnoscia_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(593, 280);
+            this.Controls.Add(this.GrazTrudnoscia);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -163,6 +176,7 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.Button GrazTrudnoscia;
     }
 }
 

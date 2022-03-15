@@ -71,5 +71,16 @@ namespace Saper___gra
                 
             }
         }
+
+        private void GrazTrudnoscia_Click(object sender, EventArgs e)
+        {
+            Form2 GameWindow = new Form2();
+            GameWindow.Show();
+        }
+
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
