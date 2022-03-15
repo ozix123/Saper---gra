@@ -20,8 +20,12 @@ namespace Saper___gra
             
         }
         public int poziom=0;
+        static int sec = 0;
+        static int min = 0;
         private void button_start_Click(object sender, EventArgs e)
         {
+            sec = 0;
+            min = 0;
             Random rdn = new Random();
             int x = rdn.Next(1, 12);
             int y = rdn.Next(13, 18);
@@ -43,6 +47,7 @@ namespace Saper___gra
                     btnTemp.Tag = false;
 
             }
+            timer1.Enabled = true;
         }
 
         private void BtnTemp_Click(object sender, EventArgs e)
@@ -56,7 +61,7 @@ namespace Saper___gra
                 int score = int.Parse(label4.Text);
                 score++;
                 label4.Text = score.ToString();
-                
+                timer1.Enabled = false;
                 if (score == 1)
                 {
                     MessageBox.Show("Przegrałeś!", "Wynik:", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -84,6 +89,17 @@ namespace Saper___gra
             
             poziom = listBox2.SelectedIndex;
             Console.WriteLine(poziom.ToString());
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            sec++;
+            if (sec == 60)
+            {
+                sec = 0;
+                min++;
+            }
+            label5.Text = Convert.ToString(min) + " : " + Convert.ToString(sec);
         }
     }
 }
