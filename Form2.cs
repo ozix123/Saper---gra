@@ -22,26 +22,63 @@ namespace Saper___gra
         public void Generator_Planszy(int poziom)
         {
             Random rdn = new Random();
-            int x = rdn.Next(1, 12);
-            int y = rdn.Next(13, 18);
-            int z = rdn.Next(19, 25);
-
-
-            for (int i = 1; i <= 25; i++)
+            switch (poziom)
             {
-                Button btnTemp = new Button();
-                btnTemp.Cursor = System.Windows.Forms.Cursors.Arrow;
-                btnTemp.Name = "btnTemp" + i.ToString();
-                btnTemp.Size = new System.Drawing.Size(40, 40);
-                btnTemp.UseVisualStyleBackColor = true;
-                flowLayoutPanel1.Controls.Add(btnTemp);
-                btnTemp.Click += BtnTemp_Click;
-                if (x == i || y == i || z == i)
-                    btnTemp.Tag = true;
-                else
-                    btnTemp.Tag = false;
+                case 0:
+                default:
+                    int x = rdn.Next(1, 12);
+                    int y = rdn.Next(13, 18);
+                    int z = rdn.Next(19, 25);
+                    
+                    for (int i = 1; i <= 25; i++)
+                    {
+                        Button btnTemp = new Button();
+                        btnTemp.Cursor = System.Windows.Forms.Cursors.Arrow;
+                        btnTemp.Name = "btnTemp" + i.ToString();
+                        btnTemp.Size = new System.Drawing.Size(40, 40);
+                        btnTemp.UseVisualStyleBackColor = true;
+                        flowLayoutPanel1.Controls.Add(btnTemp);
+                        btnTemp.Click += BtnTemp_Click;
+                        if (x == i || y == i || z == i)
+                            btnTemp.Tag = true;
+                        else
+                            btnTemp.Tag = false;
+
+                    }
+                    break;
+                case 1:
+                    int[] mina = new int[10];
+                    for (int i = 0; i <10; i++)
+                    {
+                        mina[i] = rdn.Next((8 * i) + 1, (8 * i) + 8);
+                    }
+                    for (int i = 0; i < 80; i++)
+                    {
+                        Button btnTemp = new Button();
+                        btnTemp.Cursor = System.Windows.Forms.Cursors.Arrow;
+                        btnTemp.Name = "btnTemp" + i.ToString();
+                        btnTemp.Size = new System.Drawing.Size(40, 40);
+                        btnTemp.UseVisualStyleBackColor = true;
+                        flowLayoutPanel1.Controls.Add(btnTemp);
+                        flowLayoutPanel1.Size = new System.Drawing.Size(500, 370);
+                        btnTemp.Click += BtnTemp_Click;
+                        btnTemp.Tag = false;
+                        for (int ii = 0; ii < 10; ii++)
+                        {
+                            if (i == mina[ii]) btnTemp.Tag=true;
+                        }
+                    }
+                    break;
+                case 2:
+                    // todo
+                    break;
 
             }
+            
+            
+
+
+            
         }
         private void BtnTemp_Click(object sender, EventArgs e)
         {
