@@ -12,9 +12,11 @@ namespace Saper___gra
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        public Form2(int poziom)
         {
             InitializeComponent();
+            label2.Text = (poziom+1).ToString();
         }
+        // tu będzie konstrukcja nowej planszy.
     }
 }

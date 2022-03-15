@@ -17,8 +17,9 @@ namespace Saper___gra
         public Form1()
         {
             InitializeComponent();
+            
         }
-        
+        public int poziom=0;
         private void button_start_Click(object sender, EventArgs e)
         {
             Random rdn = new Random();
@@ -74,13 +75,15 @@ namespace Saper___gra
 
         private void GrazTrudnoscia_Click(object sender, EventArgs e)
         {
-            Form2 GameWindow = new Form2();
+            Form2 GameWindow = new Form2(poziom);
             GameWindow.Show();
         }
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
+            poziom = listBox2.SelectedIndex;
+            Console.WriteLine(poziom.ToString());
         }
     }
 }
