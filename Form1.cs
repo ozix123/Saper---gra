@@ -57,6 +57,7 @@ namespace Saper___gra
 
             if (tag)
             {
+                btnTemp.Image = global::Saper___gra.Properties.Resources._3x;
                 btnTemp.BackColor = Color.Red;
                 int score = int.Parse(label4.Text);
                 score++;
