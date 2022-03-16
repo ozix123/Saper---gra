@@ -62,6 +62,7 @@ namespace Saper___gra
                 score++;
                 label4.Text = score.ToString();
                 timer1.Enabled = false;
+
                 if (score == 1)
                 {
                     MessageBox.Show("Przegrałeś!", "Wynik:", MessageBoxButtons.OK, MessageBoxIcon.Stop);

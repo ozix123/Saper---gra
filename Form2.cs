@@ -18,9 +18,13 @@ namespace Saper___gra
             label2.Text = (poziom+1).ToString();
             Generator_Planszy(poziom);
         }
+        static int sec = 0;
+        static int min = 0;
         // tu będzie konstrukcja nowej planszy.
         public void Generator_Planszy(int poziom)
         {
+            sec = 0;
+            min = 0;
             Random rdn = new Random();
             switch (poziom)
             {
@@ -45,6 +49,7 @@ namespace Saper___gra
                             btnTemp.Tag = false;
 
                     }
+                    timer1.Enabled = true;
                     break;
                 case 1:
                     int[] mina = new int[10];
@@ -68,6 +73,7 @@ namespace Saper___gra
                             if (i == mina[ii]) btnTemp.Tag=true;
                         }
                     }
+                    timer1.Enabled = true;
                     break;
                 case 2:
                     int[] minah = new int[24];
@@ -91,6 +97,7 @@ namespace Saper___gra
                             if (i == minah[ii]) btnTemp.Tag = true;
                         }
                     }
+                    timer1.Enabled = true;
                     break;
 
             }
@@ -106,6 +113,7 @@ namespace Saper___gra
                 int score = int.Parse(label4.Text);
                 score++;
                 label4.Text = score.ToString();
+                timer1.Enabled = false;
 
                 if (score == 1)
                 {
@@ -121,6 +129,17 @@ namespace Saper___gra
                 label3.Text = score.ToString();
 
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            sec++;
+            if(sec == 60)
+            {
+                sec = 0;
+                min++;
+            }
+            label7.Text = Convert.ToString(min) + " : " + Convert.ToString(sec);
         }
     }
 }
